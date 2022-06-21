@@ -74,13 +74,15 @@ function generatePassword() {
       "Do you want your password to contain lowercase letters?"
     );
   }
+  if (confirmNumber) choice = number;
+  if (confirmSpecial) choice = choice.concat(special);
+  if (confirmUpper) choice = choice.concat(upper);
+  if (confirmLower) choice = choice.concat(lower);
+
   if (!confirmNumber && !confirmSpecial && !confirmUpper && !confirmLower) {
     choice = alert("You must choose a criteria!!!!");
-  } else if (confirmSpecial && confirmNumber && confirmUpper && confirmLower) {
-    choice = special.concat(number, letters, letters2); // confirmation for all four options
-  } // else if statement for three options, there are four else if statements in total
+  }
 }
-
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
