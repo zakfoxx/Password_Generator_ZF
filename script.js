@@ -1,7 +1,7 @@
 // Assignment code here
 
 // User input
-var enter;
+var userInput;
 var confirmNumber;
 var confirmSpecial;
 var confirmUpper;
@@ -47,6 +47,21 @@ var toUpper = function (x) {
 };
 
 letters2 = letters.map(toUpper);
+
+function generatePassword() {
+  userInput = parseInt(
+    prompt(
+      "How many characters would you like for your password to be? Please choose a number between 8 and 128."
+    )
+  );
+  if (!userInput) {
+    alert("This needs a value");
+  } else if (userInput < 8 || userInput > 128) {
+      userInput = parseInt(
+    prompt(
+      "How many characters would you like for your password to be? Please choose a number between 8 and 128."
+    ))
+}
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
