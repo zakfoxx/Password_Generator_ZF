@@ -1,23 +1,52 @@
 // Assignment code here
-var promptChar = window.prompt(
-  "How many characters would you like in your password? (Must be between 8 to 128 characters.)"
-);
 
-var promptLower = window.prompt(
-  "Would you like your password to contain lowercase letters?"
-);
+// User input
+var enter;
+var confirmNumber;
+var confirmSpecial;
+var confirmUpper;
+var confirmLower;
 
-var promptUpper = window.prompt(
-  "Would you like your password to contain uppercase letters?"
-);
+special = ["!", "@", "#", "%", "^", "&", "*", "-", "=", "_", "+", "(", ")"];
+number = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+letters = [
+  "a",
+  "b",
+  "c",
+  "d",
+  "e",
+  "f",
+  "g",
+  "h",
+  "i",
+  "j",
+  "k",
+  "l",
+  "m",
+  "n",
+  "o",
+  "p",
+  "q",
+  "r",
+  "s",
+  "t",
+  "u",
+  "v",
+  "w",
+  "x",
+  "y",
+  "z",
+];
 
-var promptNumbers = window.prompt(
-  "Would you like your password to contain numbers?"
-);
+conv = [];
 
-var promptSpecial = window.prompt(
-  "Would you like your password to contain special characters?"
-);
+var choice;
+
+var toUpper = function (x) {
+  return x.toUpperCase();
+};
+
+letters2 = letters.map(toUpper);
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
