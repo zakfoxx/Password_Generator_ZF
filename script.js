@@ -57,10 +57,28 @@ function generatePassword() {
   if (!userInput) {
     alert("This needs a value");
   } else if (userInput < 8 || userInput > 128) {
-      userInput = parseInt(
-    prompt(
-      "How many characters would you like for your password to be? Please choose a number between 8 and 128."
-    ))
+    userInput = parseInt(
+      prompt(
+        "How many characters would you like for your password to be? Please choose a number between 8 and 128."
+      )
+    );
+  } else {
+    confirmNumber = confirm("Do you want your password to contain numbers?");
+    confirmSpecial = confirm(
+      "Do you want your password to contain special characters?"
+    );
+    confirmUpper = confirm(
+      "Do you want your password to contain uppercase letters?"
+    );
+    confirmLower = confirm(
+      "Do you want your password to contain lowercase letters?"
+    );
+  }
+  if (!confirmNumber && !confirmSpecial && !confirmUpper && !confirmLower) {
+    choice = alert("You must choose a criteria!!!!");
+  } else if (confirmSpecial && confirmNumber && confirmUpper && confirmLower) {
+    choice = special.concat(number, letters, letters2); // confirmation for all four options
+  } // else if statement for three options, there are four else if statements in total
 }
 
 // Get references to the #generate element
