@@ -54,7 +54,7 @@ const letters = [
 
 conv = [];
 
-var choice;
+let choice = "";
 
 var toUpper = function (x) {
   return x.toUpperCase();
@@ -96,9 +96,7 @@ function generatePassword() {
       if (confirmUpper) choice = choice.concat(letters2.join(""));
       if (confirmLower) choice = choice.concat(letters.join(""));
 
-      if (!confirmNumber && !confirmSpecial && !confirmUpper && !confirmLower) {
-        alert("You must choose a criteria!!!!");
-      } else {
+      if (confirmNumber || confirmSpecial || confirmUpper || confirmLower) {
         let pattern = [];
         let stringArray = choice.split("");
         for (let i = 0; i < userInput; i++) {
@@ -108,6 +106,8 @@ function generatePassword() {
         }
         password = pattern.join("");
         passwordSuccess = true;
+      } else {
+        alert("You must choose a criteria!!!!");
       }
     }
   }
